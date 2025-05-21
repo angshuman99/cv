@@ -1,165 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Angshuman Barman - Cybersecurity Resume</title>
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
-<style>
-    body {
-        font-family: 'Roboto', sans-serif;
-        margin: 0;
-        padding: 0;
-        background: #121212;
-        color: #e0e0e0;
-        transition: color 0.3s ease;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angshuman Barman - Cybersecurity Resume</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset and base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+    html, body {
+      height: 100%;
+      background: black;
+      overflow-x: hidden;
+      font-family: 'Roboto', sans-serif;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    /* Matrix Background Canvas */
+    canvas#matrixCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: black;
+    }
+
+    /* Resume container */
     .container {
-        max-width: 900px;
-        margin: 30px auto;
-        padding: 25px;
-        background: #1e1e1e;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 30px;
+      background: rgba(18, 18, 18, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      animation: fadeIn 0.6s ease-in-out;
     }
+
+    /* Header */
     header {
-        text-align: center;
-        padding: 20px 0;
-        border-bottom: 3px solid #4CAF50;
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 3px solid #4caf50;
     }
-    h1, h2, h3 {
-        color: #ffffff;
+    header h1 {
+      font-size: 2.5rem;
+      color: #4caf50;
     }
+    header p {
+      margin-top: 5px;
+    }
+
+    /* Links */
     a {
-        color: #4CAF50;
-        text-decoration: none;
-        font-weight: bold;
-        transition: color 0.3s ease;
+      color: #4caf50;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-weight: 600;
     }
     a:hover {
-        color: #81C784;
+      color: #81c784;
     }
+
+    /* Sections */
     .section {
-        margin-top: 20px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #444;
+      margin-top: 30px;
     }
+    h2 {
+      color: #fff;
+      border-left: 5px solid #4caf50;
+      padding-left: 10px;
+      margin-bottom: 15px;
+    }
+
+    /* Tables */
     table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 10px;
-    }
-    table, th, td {
-        border: 1px solid #4CAF50;
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
     }
     th, td {
-        padding: 10px;
-        text-align: left;
+      padding: 10px;
+      border: 1px solid #4caf50;
     }
     th {
-        background: #333;
-        color: #fff;
+      background-color: #333;
+      color: #fff;
     }
-</style>
+
+    /* Fade animation */
+    .fade {
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
-<div class="container">
+
+  <canvas id="matrixCanvas"></canvas>
+
+  <div class="container">
     <header>
-        <h1>Angshuman Barman</h1>
-        <p>Cybersecurity Specialist | Security Architect | CEHv12 (Practical) | CCSA R81.10</p>
-        <p>📞 +91 9957095900 | 📧 <a href="mailto:angshuman.barman.p@gmail.com">angshuman.barman.p@gmail.com</a></p>
-        <p><a href="https://www.linkedin.com/in/angshuman-barman-147017165/">LinkedIn</a> | <a href="https://github.com/angshuman99/web-recon-tool">GitHub</a> | <a href="https://angshuman99.github.io/cv/">Portfolio</a></p>
+      <h1>Angshuman Barman</h1>
+      <p>Cybersecurity Specialist | Security Architect | CEHv12 (Practical) | CCSA R81.10</p>
+      <p>📞 +91 9957095900 | 📧 <a href="mailto:angshuman.barman.p@gmail.com">angshuman.barman.p@gmail.com</a></p>
+      <p>
+        <a href="https://www.linkedin.com/in/angshuman-barman-147017165/">LinkedIn</a> |
+        <a href="https://github.com/angshuman99/web-recon-tool">GitHub</a> |
+        <a href="https://angshuman99.github.io/cv/">Portfolio</a>
+      </p>
     </header>
-    <div class="section">
-        <h2>Professional Summary</h2>
-        <p>Cybersecurity expert with 4+ years of experience in network security, penetration testing, and threat intelligence.</p>
-        <p>Automates IT security workflows with Python, saving time and increasing efficiency.</p>
-        <p>Leverages open-source AI tools for cybersecurity research, automation, and innovation.</p>
-        <p>Expert in Akamai WAAP, SOC operations, cloud security, and AI-driven cybersecurity solutions.</p>
+
+    <div class="section fade">
+      <h2>Professional Summary</h2>
+      <p>Cybersecurity expert with 4+ years of experience in network & application security, API security, pentesting, and threat intelligence.</p>
+      <p>Automates IT security workflows with Python; boosts operational efficiency and integrates AI with security tools for innovation.</p>
+      <p>Leverages open-source AI tools for cybersecurity research, automation, and forward-thinking solutions.</p>
+      <p>Expertise in Akamai WAAP, SOC operations, cloud security (AWS, Azure, GCP), and AI-driven cybersecurity solutions.</p>
+      <p>Passionate about launching a cybersecurity business focused on innovative approach and strategic growth.</p>
     </div>
-    <div class="section">
-        <h2>Experience</h2>
-        <table>
-            <tr>
-                <th>Role</th>
-                <th>Company</th>
-                <th>Duration</th>
-                <th>Key Contributions</th>
-            </tr>
-            <tr>
-                <td>Security Delivery Analyst</td>
-                <td>Accenture</td>
-                <td>Jul 2024 - Present</td>
-                <td>Strengthened Akamai WAAP, Conducted API pentesting, Led SOC operations, Automated security monitoring.</td>
-            </tr>
-            <tr>
-                <td>Security Engineer</td>
-                <td>QOS Technology Pvt Ltd</td>
-                <td>Apr 2021 - Jul 2024</td>
-                <td>Managed firewall security for 11 enterprise sites, Automated threat detection, Integrated AI-driven security solutions.</td>
-            </tr>
-            <tr>
-                <td>IT Support Engineer</td>
-                <td>Inomadic</td>
-                <td>Aug 2020 - Mar 2021</td>
-                <td>Provided IT support, Resolved critical security issues.</td>
-            </tr>
-        </table>
+
+    <div class="section fade">
+      <h2>Experience</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Company</th>
+            <th>Duration</th>
+            <th>Key Contributions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Security Delivery Analyst</td>
+            <td>Accenture</td>
+            <td>Jul 2024 - Present</td>
+            <td>
+              - Strengthened Akamai WAAP protection.<br />
+              - Conducted advanced API pentesting and vulnerability assessments.<br />
+              - Led SOC operations with automation and threat hunting/monitoring.<br />
+              - Enhanced cloud security posture (AWS, Azure, GCP) also Review of Firewall rules via Tufin.<br />
+              - Collaborated on strategic cybersecurity initiatives aligned to business goals.
+            </td>
+          </tr>
+          <tr>
+            <td>Security Engineer</td>
+            <td>QOS Technology Pvt Ltd</td>
+            <td>Apr 2021 - Jul 2024</td>
+            <td>
+              - Managed firewall security (Check Point) for 11 enterprise sites.<br />
+              - Automated threat detection and response workflows.<br />
+              - Integrated AI-driven security tools to improve threat intelligence.<br />
+              - Led pentesting engagements and incident investigations.
+            </td>
+          </tr>
+          <tr>
+            <td>IT Support Engineer</td>
+            <td>Inomadic</td>
+            <td>Aug 2020 - Mar 2021</td>
+            <td>- Provided IT support and resolved critical security issues.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="section">
-        <h2>Certifications & Credentials</h2>
-        <table>
-            <tr>
-                <th>Certification</th>
-                <th>Issuer</th>
-                <th>Year</th>
-            </tr>
-            <tr>
-                <td>Certified Ethical Hacker (CEH Practical)</td>
-                <td>EC Council</td>
-                <td>2023</td>
-            </tr>
-            <tr>
-                <td>Junior Penetration Tester</td>
-                <td>TryHackMe</td>
-                <td>2022</td>
-            </tr>
-            <tr>
-                <td>Check Point Certified Security Administrator (CCSA)</td>
-                <td>Check Point</td>
-                <td>2022</td>
-            </tr>
-        </table>
+
+    <div class="section fade">
+      <h2>Certifications & Credentials</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Certification</th>
+            <th>Issuer</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Certified Ethical Hacker (Practical), Credential ID ECC6207584931</td>
+            <td>EC Council</td>
+            <td>2023</td>
+          </tr>
+          <tr>
+            <td>Junior Penetration tester, Credential ID THM-2S46CSACRS</td>
+            <td>TryHackMe</td>
+            <td>2022</td>
+          </tr>
+          <tr>
+            <td>Check Point Certified Security Administrator (CCSA), Credential ID CP0000120081</td>
+            <td>Check Point</td>
+            <td>2022</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="section">
-        <h2>Technical Skills & Tools</h2>
-        <table>
-            <tr>
-                <th>Category</th>
-                <th>Tools & Technologies</th>
-            </tr>
-            <tr>
-                <td>Security & Defensive</td>
-                <td>Akamai WAAP, Palo Alto, Cisco ASA, Check Point, Splunk, AlienVault</td>
-            </tr>
-            <tr>
-                <td>Pentesting & Forensics</td>
-                <td>Burp Suite, Nessus, Nmap, Wireshark, Metasploit</td>
-            </tr>
-            <tr>
-                <td>Automation & Scripting</td>
-                <td>Python, Bash, Check Point API</td>
-            </tr>
-            <tr>
-                <td>Cloud Security</td>
-                <td>Azure, AWS, GCP, PCI DSS Compliance</td>
-            </tr>
-            <tr>
-                <td>AI & Innovation</td>
-                <td>Open-source AI tools for security, automation, and cybersecurity research</td>
-            </tr>
-        </table>
+
+    <div class="section fade">
+      <h2>Technical Skills & Tools</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Tools & Technologies</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Security & Defensive</td>
+            <td>Akamai WAAP, Palo Alto, Cisco ASA, Check Point, Splunk, AlienVault</td>
+          </tr>
+          <tr>
+            <td>Pentesting & Forensics</td>
+            <td>Burp Suite, Nessus, Nmap, Wireshark, Metasploit</td>
+          </tr>
+          <tr>
+            <td>Automation & Scripting</td>
+            <td>Python, Bash, Check Point API</td>
+          </tr>
+          <tr>
+            <td>Cloud Security</td>
+            <td>Azure, AWS, GCP, PCI DSS Compliance</td>
+          </tr>
+          <tr>
+            <td>AI & Innovation</td>
+            <td>Open-source AI tools for security, automation, and cybersecurity research</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</div>
+
+    <div class="section fade">
+      <h2>Strategic Initiatives & Projects</h2>
+      <ul>
+        <li>Developing AI-powered tools for automated pentesting and vulnerability discovery to stay ahead of evolving threats.</li>
+        <li>Building a cybersecurity startup focused on ethical hacking solutions with a cloud-native approach.</li>
+        <li>Implementing continuous security monitoring pipelines integrating Splunk and cloud-native tools for real-time threat detection.</li>
+        <li>Conducting advanced API security assessments to identify complex attack vectors and harden web applications.</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    // Matrix-style animation script
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    const matrixChars = "01";
+    const fontSize = 14;
+    let columns = Math.floor(canvas.width / fontSize);
+    let drops = Array(columns).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "#4caf50";
+      ctx.font = fontSize + "px monospace";
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = matrixChars.charAt(Math.floor(Math.random() * matrixChars.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height || Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    setInterval(drawMatrix, 33);
+  </script>
+
 </body>
 </html>
